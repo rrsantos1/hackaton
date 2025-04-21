@@ -10,6 +10,7 @@ import { createQuizActivity } from '../controllers/create-quiz-activity';
 import { createClozeActivity } from '../controllers/create-cloze-activity';
 import { createDragDropActivity } from '../controllers/create-drag-drop-activity';
 import { createMultipleChoiceActivity } from '../controllers/create-multiple-choice-activity';
+import { createSentenceOrderActivity } from '../controllers/create-sentence-order-activity';
 
 export async function activityRoutes(app: FastifyInstance) {
     app.post('/activity', createActivity);
@@ -22,5 +23,6 @@ export async function activityRoutes(app: FastifyInstance) {
     app.post('/activities/quiz', createQuizActivity);
     app.post('/activities/cloze', createClozeActivity);
     app.post('/activities/dragdrop', createDragDropActivity);
-    app.post('/activities/multiplechoice', createMultipleChoiceActivity);    
+    app.post('/activities/multiplechoice', createMultipleChoiceActivity);
+    app.post('/activities/sentence_order', createSentenceOrderActivity);    
 }
