@@ -6,7 +6,7 @@ const startServer = async () => {
     // Define o baseUrl com o domínio de produção ou localhost para dev
     const baseUrl =
       env.NODE_ENV === 'production'
-        ? 'https://timetolearn.com' // Substitua pelo domínio correto
+        ? 'https://hackaton.com' // Substitua pelo domínio correto
         : `http://localhost:${env.PORT}`;
     
     // Escuta em '0.0.0.0' para produção e localhost para desenvolvimento

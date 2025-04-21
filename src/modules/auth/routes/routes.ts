@@ -5,7 +5,6 @@ import { updateUser } from '../controllers/update';
 import { findUserById } from '../controllers/find-user-by-id';
 import { findAllUser } from '../controllers/find-all-user';
 import { signin } from '../controllers/signin';
-import { verifyEmail } from '../controllers/verify-email';
 
 export async function userRoutes(app: FastifyInstance) {
     app.post('/user', createUser);
@@ -14,5 +13,4 @@ export async function userRoutes(app: FastifyInstance) {
     app.get('/user/:id', findUserById);
     app.get('/user', findAllUser);
     app.post('/user/signin', signin);
-    app.get('/verifyEmail', verifyEmail);
 }

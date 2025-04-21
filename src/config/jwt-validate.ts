@@ -1,9 +1,10 @@
-import { FastifyReply, FastifyRequest } from "fastify";
+import fastifyConstructor, { FastifyReply, FastifyRequest } from "fastify";
+
+const fastify = fastifyConstructor();
 
 const ROUTE_FREE_PATTERNS = [
   /^POST-\/user$/,
   /^POST-\/user\/signin$/,
-  /^GET-\/verifyEmail$/,
   /^GET-\/public(\/.*)?$/,
   /^GET-\/uploads(\/.*)?$/, // <-- Libera arquivos estáticos
 ];
@@ -28,7 +29,7 @@ function isRouteFree(request: FastifyRequest): boolean {
 /**
  * Middleware de validação de JWT.
  */
-export async function validateJwt(request: FastifyRequest, reply: FastifyReply): Promise<void> {
+export async function validateJwt(request: FastifyRequest, reply: FastifyReply): Promise<void> {  
   try {
     if (isRouteFree(request)) {
       return; // Rota liberada, não exige autenticação

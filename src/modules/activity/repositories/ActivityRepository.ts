@@ -28,16 +28,14 @@ export class ActivityRepository implements IActivityRepository {
   
   async findActivityById(id: number): Promise<IActivity | null> {
     return this.repository.findOne({
-        where: { id },
-        relations: ['items']
+        where: { id }
     })
   }
   
   async findAllActivity(page: number, limit: number): Promise<IActivity[] | undefined> {
     return this.repository.find({            
         skip: (page - 1) * limit,
-        take: limit,
-        relations: ['items']
+        take: limit
     })
   }
 }

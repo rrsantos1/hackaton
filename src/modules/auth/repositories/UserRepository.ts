@@ -28,23 +28,20 @@ export class UserRepository implements IUserRepository {
 
   async findUserById(id: number): Promise<IUser | null> {
     return this.repository.findOne({
-        where: { id },
-        relations: ['subscriptions']
+        where: { id }
     })
   }
 
   async findAllUser(page: number, limit: number): Promise<IUser[] | undefined> {
     return this.repository.find({            
         skip: (page - 1) * limit,
-        take: limit,
-        relations: ['subscriptions']
+        take: limit
     })
   }
 
   async findByEmail(email: string): Promise<IUser | null> {
     return this.repository.findOne({
-        where: { email },
-        relations: ['subscriptions']	
+        where: { email }	
     })
   }
 }

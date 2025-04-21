@@ -8,9 +8,7 @@ export enum ActivityType {
     MATCHING = "matching",
     MULTIPLE_CHOICE = "multiple_choice",
     FILL_IN_THE_BLANK = "fill_in_the_blank",
-    DRAG_DROP = "drag_drop",
-    SORTING = "sorting",
-    SURVEY = "survey",    
+    DRAG_DROP = "drag_drop"
 }
   
 @Entity({ name: "activities" })

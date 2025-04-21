@@ -41,7 +41,7 @@ export class User {
   @Column({ 
     name: 'isVerified', 
     type: 'boolean', 
-    default: false })
+    default: true })
   isVerified?: boolean;  
 
   @CreateDateColumn({ 
